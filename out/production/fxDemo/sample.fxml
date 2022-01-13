@@ -1,0 +1,20 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:id="gp" fx:controller="MyController" alignment="TOP_LEFT" hgap="10"
+          vgap="10">
+
+    <Label text="Hello, World!" GridPane.rowIndex="0"/>
+
+    <TextField fx:id="txt1" GridPane.columnIndex="1"  promptText="First Name" maxHeight="20"/>
+
+    <TextField fx:id="txt2" GridPane.columnIndex="2"   maxHeight="20"/>
+
+    <Button fx:id="btn" text="Click Me!" GridPane.columnIndex="3"  onAction="#handleButtonAction"/>
+
+
+    <TableView fx:id="tbl" GridPane.rowIndex="4"  GridPane.columnSpan="10" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"
+               GridPane.vgrow="ALWAYS"/>
+
+
+
+</GridPane>

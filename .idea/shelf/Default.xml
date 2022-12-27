@@ -1,0 +1,9 @@
+<changelist name="Default" date="1672153323563" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Default/shelved.patch" />
+  <option name="DESCRIPTION" value="Default" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/fxDemoDataPopulate/MyController.class" />
+    <option name="AFTER_PATH" value="out/production/fxDemoDataPopulate/MyController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Default/MyController.class" />
+  </binary>
+</changelist>

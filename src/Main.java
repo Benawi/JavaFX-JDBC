@@ -17,8 +17,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
         primaryStage.setTitle("WKU CCI CS");
-        Scene scene = new Scene(root, 800, 500);
-        //scene.getStylesheets().add("sty.css");
+        Scene scene = new Scene(root, 600, 500);
+        scene.getStylesheets().add("sty.css");
         primaryStage.setScene(scene);
         primaryStage.show();
 

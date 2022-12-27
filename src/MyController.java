@@ -4,12 +4,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.util.Callback;
 
-import java.sql.*;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -46,8 +48,8 @@ public class MyController {
             c = obj1.connMethod();
 
             //int id = Integer.parseInt(data1);
-           //SQL FOR SELECTING ALL OF CUSTOMER
-            String SQL = "SELECT * from DEMO_ORDERS";
+            //SQL FOR SELECTING ALL OF Table
+            String SQL = "SELECT * from java";
             //ResultSet,Statement
 
             rs = c.createStatement().executeQuery(SQL);
@@ -61,7 +63,7 @@ public class MyController {
            Boolean status= p.execute();
 */
 
-             //rs = p.executeQuery();
+            //rs = p.executeQuery();
 
             //ResultSet,CallableStatement
             /*CallableStatement cstmt = c.prepareCall("{call SELECTOR14(?,?)}");
@@ -70,10 +72,10 @@ public class MyController {
             rs=cstmt.executeQuery();
             System.out.println(cstmt.getTimestamp(2));*/
             //rs = cstmt.executeQuery();
-            CallableStatement cstmt = c.prepareCall("{call INSERTDATA(?,?)}");
+          /*  CallableStatement cstmt = c.prepareCall("{call INSERTDATA(?,?)}");
             cstmt.setString(1,data1);
             cstmt.setString(2,data2);
-            cstmt.execute();
+            cstmt.execute();*/
 
             //ResultSetMetaData rsmd = rs.getMetaData();
             for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
@@ -118,28 +120,25 @@ public class MyController {
         data1 = txt1.getText();
         data2 = txt2.getText();
 
-        String query = "Insert into Profile(FirstName,LastName) VALUES('" + data1 + "','" + data2 + "')";
+        String query = "Insert into java(NAME,COURSE) VALUES('" + data1 + "','" + data2 + "')";
         try {
 
             Statement statement = conn.createStatement();
-            //statement.execute(query);
+            boolean status=statement.execute(query);
             txt1.setText("");
             txt2.setText("");
 
-            Alert a = new Alert(Alert.AlertType.ERROR);
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            if (!status)
             a.setContentText("successfuly inserted");
+            else
+                a.setContentText("Failed");
             a.showAndWait();
             // create a popup
 
-            ProgressIndicator PI = new ProgressIndicator();
-            //PI.setProgress(0.1);
-            AnchorPane root = new AnchorPane();
-            PI.setMinSize(300, 300);
-            root.getChildren().add(PI);
-            gp.add(root, 2, 4);
-
 
             buildData();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

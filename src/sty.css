@@ -47,7 +47,6 @@
         transparent;
     -fx-border-insets: 0 10 1 0;
 }
-
 .table-view .column-header .label {
     -fx-font-size: 14 pt;
     -fx-font-family: "Segoe UI Light";

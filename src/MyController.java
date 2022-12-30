@@ -51,7 +51,9 @@ public class MyController {
             tbl.setStyle("-fx-background-color:red; -fx-font-color:yellow ");
             obj1 = new DbConnection();
             c = obj1.connMethod();
-
+            //clear the content of table view
+            data.clear();
+            tbl.getColumns().clear();
             //int id = Integer.parseInt(data1);
             //SQL FOR SELECTING ALL OF Table
             String SQL = "SELECT * from java";
@@ -113,6 +115,7 @@ public class MyController {
                     row.add(rs.getString(i));
                 }
                 System.out.println("Row[1]added " + row);
+
                 data.add(row);
 
             }
@@ -146,7 +149,6 @@ public class MyController {
                 a.setContentText("Failed");
             a.showAndWait();
             // create a popup
-
 
             buildData();
 

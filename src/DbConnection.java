@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class DbConnection {
     private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-    private static final String USER = "java2021";
+    private static final String USER = "JAVADB2022";
     private static final String PASSWORD = "1616";
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     Connection conn = null;
